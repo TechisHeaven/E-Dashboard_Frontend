@@ -1,38 +1,538 @@
-.App {
-  text-align: center;
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+footer{
+  padding:2em !important;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: 2em;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html{
+  height: 100%;
+}
+body{
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 9em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+.navbar ul{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.navbar ul li{
+  list-style: none;
+  padding: 1em;
+}
+.navbar ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+.nav-img{
+  width: 80px;
+  padding: 10px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.navbar{
+  background-color: black;
+  color: white;
+   align-items: center;
+   justify-content: center;
+  display: flex;
+  padding:.2em 4em;
+}
+
+
+
+.RegisterCon{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  height:100vh;
+}
+
+.LoginCon{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2em;
+  height:100vh;
+}
+.LoginCon p{
+ text-align: center;
+ font-size:2.5em;
+ font-weight: 600;
+}
+.RegisterCon p{
+  text-align: center;
+  font-size:2.5em;
+  font-weight: 600;
+}
+
+.inputfields{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.inputfields input{
+  padding: 1em;
+  margin: 1em;
+  /* width: 40vw; */
+}
+.inputfields select{
+  padding: 1em;
+  margin: 1em;
+  /* width: 40vw; */
+}
+
+option[value=""]{
+  display: none;
+}
+
+option{
+  padding:5px 0;
+}
+
+
+option:focus{
+  background-color: red;
+}
+
+
+
+.inputfields button{
+  padding: 1em;
+  margin: .5em;
+  /* width: 40vw; */
+  border:1px solid grey;
+  background-color: rgb(63, 63, 63);
+  color: white;
+}
+ button{
+  background-color: rgb(63, 63, 63);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover{
+  background-color: black;
+  cursor: pointer;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.search{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+.search input{
+  padding: 1em;
+  width: 40vw;
+}
+
+
+
+/* nav*/
+
+.nav-right{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+
+
+
+/* nav*/
+
+
+.product-con{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  flex-wrap:  wrap;
+  height: 100vh;
+}
+
+.user-con{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  flex-wrap:  wrap;
+  height: 100vh;
+}
+
+.container{
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-content: center;
+  width: 40vw;
+  flex-direction: column;
+}
+
+.container h1{
+  text-align: center;
+}
+
+
+
+
+.invalid-message{
+  color: red;
+  padding: 0em 1em;
+}
+
+
+
+/* product list*/
+
+
+
+.product-list{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+.product-list h1{
+  text-align: center;
+}
+
+.product-row{
+  display: flex;
+  list-style: none;
+  background-color: black;
+  color: white;
+}
+.user-row{
+  display: flex;
+  list-style: none;
+  background-color: black;
+  color: white;
+}
+.product-col{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  list-style: none;
+  background-color: white;
+  color: black;
+}
+.user-col{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  list-style: none;
+  background-color: white;
+  color: black;
+}
+.user-col li{
+  padding: 1em;
+  width:12vw;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: 1em;
+  overflow-x: auto;
+  border: 1px solid grey;
+}
+
+.product-col li{
+  padding: 1em;
+  width:15vw;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  grid-auto-flow: column;
+  gap: 1em;
+  border: 1px solid grey;
+}
+
+.product-col li button{
+  padding: .5em;
+  border-radius: 10px;
+  border: 0px ;
+}
+
+
+.user-col li button{
+  padding: .5em;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.product-row li{
+  padding:1em 3em;
+  width:15vw;
+  display: flex;
+  gap: 2em;
+  border: 1px solid grey;
+}
+
+.col-row{
+  display: flex;
+  list-style: none;
+  background-color: black;
+  color: white;
+}
+.col-row li{
+  padding:1em 3em;
+  width:12vw;
+  display: flex;
+  gap: 2em;
+  border: 1px solid grey;
+}
+.product-col li a{
+  color:white;
+  text-decoration: none;
+}
+.user-col li a{
+  color:white;
+  text-decoration: none;
+}
+.product-col li a:hover{
+  color:white;
+}
+
+.product-col li a{
+  padding: .5em;
+}
+
+.con{
+  width: 100vw;
+  padding: 1em;
+}
+
+#file-upload{
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.profileImg{
+  border-radius: 50%;
+  border: 4px solid white;
+  margin: 0em 2em;
+  object-fit: cover;
+  margin-top: 2em;
+}
+
+.userImg{
+  object-fit: cover;
+}
+
+.profileImg_remove{
+  padding: .5em .5em;
+  border-radius: 10px;
+}
+
+
+.banner{
+  height: 200px;
+  border-radius: 10px 0px 0px 0px;;
+  background: rgb(254,233,241);
+  background: linear-gradient(117deg, rgba(254,233,241,1) 20%, rgba(255,196,219,1) 96%, rgba(255,153,192,1) 100%);
+  cursor: pointer;
+  
+}
+
+.custom-file-upload{
+  position: relative;
+  top: -100px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+}
+
+
+.imgform{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.heading{
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.left_con{
+  display: flex;
+  padding: 1em;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.left_con_main{
+  display: flex;
+}
+
+.con_btn button{
+  text-transform: capitalize;
+  padding: .5em .8em;
+  border-radius: .5em;
+  background-color: rgb(63, 63, 63);
+  color: white;
+}
+.con_btn_logout button{
+  text-transform: capitalize;
+  padding: .8em 1em;
+  border-radius: .5em;
+  margin: 0em 1em;
+}
+
+.con_btn_logout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.con_btn button:hover{
+  text-transform: capitalize;
+  background-color: black;
+  color: white;
+}
+
+.subcon p{
+  margin: .2em 0em;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.item{
+  display: flex;
+  justify-content: space-between;
+  margin: 1.6em 6em;
+}
+
+
+.items-input input{
+  padding: 1.1em 4em;
+  border: 1px solid #c2c2c2;
+  border-radius:.5em;
+  width: 30vw;
+}
+
+.item label{
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  justify-content: center;
+}
+
+.items-input{
+  display: flex;
+  align-items: center;
+}
+
+
+.item textarea{
+  padding: .5em;
+  resize: none;
+  width: 30vw;
+  border: 1px solid #c2c2c2;
+}
+
+
+
+.disable input{
+  background-color: #f1f1f1;
+  color: #bebebe;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+.items-input i{
+  position: absolute;
+  padding: .9em;
+  border-radius:.5em 0px 0px .5em;
+  background-color: rgb(63, 63, 63);
+  color: white;
+}
+
+
+
+
+.scroll-top{
+  width: 2em;
+  height: 2em;
+  background-color: rgb(63, 63, 63);
+  border-radius: 50%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2em;
+  border: 1px solid white;
+}
+
+
+.scroll-top:hover{
+  background-color: black;
+}
+
+.scroll-top a{
+  color: white;
+}
+
+
+.loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
